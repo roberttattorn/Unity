@@ -1,0 +1,14 @@
+Put the MeshLineExtrudeEditor in the editor folder. 
+How to use this:
+Preparation: Create a 3D road segment (a simple box or a complex mesh). Ensure it is oriented so its "forward" axis is Z.
+Setup: Create an Empty GameObject, add MeshLineExtruder, and drag your road mesh into the Source Mesh slot.
+Drawing:
+Select the GameObject.
+In the Scene View, hold Shift and Left Click on your terrain or floor.
+The mesh will automatically "shrinkwrap" (snap) to the surface where you click and extrude a segment from the previous point.
+Lateral Leveling: Because of the Quaternion.LookRotation(direction, Vector3.up) logic, the road will stay flat horizontally even if you are clicking up a steep mountain side. 
+
+If you find yourself accidentally moving the terrain while drawing:
+Go to the Layers dropdown (top right of Unity).
+Click the Lock icon next to your "Terrain" layer.
+Now you can click the terrain to get the height data, but you won't accidentally select or move the terrain object itself!
